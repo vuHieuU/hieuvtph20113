@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const restaurant = {
+            name: 'Classsico Italiano',
+            location: 'Via Angelo Tavanti 23, Firenze, Italy',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['pizza', 'pasta', 'Risotto'],
+            order: function (starterIndex, mainIndex) {
+                return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+            }
+        };
+
+        let [main, , secondary] = restaurant.categories;
+        console.log(main, secondary);
+
+        [main, secondary] = [secondary, main];
+        console.log(main, secondary);
+
+        const [starter, mainCourse] = restaurant.order(2, 0);
+        console.log(starter, mainCourse);
+
+        const arr = [4, 5, [7, 8]];
+        const [j, , [q, k]] = arr;
+        console.log(j, q, k);
+
+        const arr2 = [4, 5];
+        const [a, b, c] = arr2;
+        console.log(a, b, c);
+    </script>
+</body>
+
+</html>

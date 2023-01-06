@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, Firenze, Italy',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['pizza', 'pasta', 'Risotto'],
+            openinghous: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+            order: function (starterIndex, mainIndex) {
+                return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+            },
+
+            orderDelivery: function({
+                time = '20:30',
+                address = 'Hà Nội',
+                starterIndex = '2',
+                mainIndex = '2'
+
+            }) {
+                   console.log(`tôi muốn đặt một ${this.starterMenu[starterIndex]} và ${this.mainMenu[mainIndex]} đến ${address} vào lúc ${time}`);
+              },
+
+            orderDelivery: function({starterIndex,mainIndex,address,time}){
+                   console.log(`tôi muốn đặt một ${this.starterMenu[starterIndex]} và ${this.mainMenu[mainIndex]} đến ${address} vào lúc ${time}`);
+              }
+        };
+
+        
+       
+
+        restaurant.orderDelivery({
+                time : '22:30',
+                address : 'Hà Nội',
+                starterIndex : '0',
+                mainIndex : '0'
+
+            })
+
+        const { name, openinghous, categories } = restaurant;
+        console.log(name, openinghous, categories);
+
+        const {
+            name: ten,
+            openinghous: gio,
+            categories: loai,
+        } = restaurant;
+        console.log(ten, gio, loai);
+
+        const { menu = [], starterMenu: starter = [] } = restaurant;
+        console.log(menu, starter);
+
+        let a = 111;
+        let b = 999;
+        const obj = { a: 23, b: 11, c: 33 };
+        ({ a, b } = obj);
+        console.log(a, b);
+
+        const {fri: {open:o , close:c}}= openinghous;
+           console.log(o,c);
+
+    </script>
+</body>
+
+</html>
