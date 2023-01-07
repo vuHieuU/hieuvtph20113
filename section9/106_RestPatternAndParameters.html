@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, quán, nhà',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['cơm', 'cháo', 'lẩu'],
+            openinghous: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+            order: function (ing1, ...ingOther) {
+                console.log(ing1, ingOther);
+            }
+        };
+
+        const [j, k, ...others] = [1, 2, 3, 4, 5];
+        console.log(j, k, others);
+
+        const [a, , c, ...othersFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+        console.log(a, c, othersFood);
+
+        // dùng objects
+        const { sat, ...dayOthers } = restaurant.openinghous;
+        console.log(dayOthers);
+
+        const add = function (...number) {
+            let sum = 0;
+            for (let i = 0; i < number.length; i++)
+                sum += number[i];
+            console.log(sum);
+        }
+        add(1, 2, 3);
+        add(4, 5, 6);
+        add(5, 6, 7, 8, 9);
+
+        restaurant.order('thit', 'gao', 'h2o');
+        restaurant.order('thit');
+
+    </script>
+</body>
+
+</html>
