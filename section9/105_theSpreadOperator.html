@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, Firenze, Italy',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['pizza', 'pasta', 'Risotto'],
+            openinghous: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+            order: function (starterIndex, mainIndex) {
+                return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+            },
+            orderbanhmy: function(ing1 , ing2 , ing3){
+                console.log(`mua 1 bánh mỳ gồm ${ing1} ${ing2} và ${ing3}`);
+            }
+        };
+        const arr = [7, 8, 9];
+
+        const newArr = [1, 2, arr[0], arr[1], arr[2]];
+        console.log(newArr);
+
+        const newArr2 = [1, 2, arr];
+        console.log(newArr2);
+
+        const newArr3 = [1, 2, ...arr];
+        console.log(newArr3);
+
+        console.log(1, 2, ...arr);
+        console.log(1, 2, 4, 5, 6);
+
+        // nối mảng
+        const newMenu = [...restaurant.starterMenu, 'cơm'];
+        console.log(newMenu);
+
+        // join 2 Mảng
+        const mainMenu = [...restaurant.mainMenu, ...newMenu];
+        console.log(mainMenu);
+
+        const name = "hieu";
+        const letters = [...name, "", "n."];
+        console.log(letters);
+
+        console.log(...name)
+          
+        const nguyenlieu = [prompt("ng1?"),prompt('ng2 ?'),prompt('ng3 ?')];
+        console.log(nguyenlieu);
+
+        restaurant.orderbanhmy(...nguyenlieu);
+    </script>
+</body>
+
+</html>
