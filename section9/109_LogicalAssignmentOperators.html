@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, quán, nhà',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['cơm', 'cháo', 'lẩu'],
+            openinghous: {
+                thu: {
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+        };
+        const res1 = {
+            name: 'hieu',
+            old: 19,
+        };
+        const res2 = {
+            name: 'hieu',
+            month: 10,
+        };
+
+        res1.old ??= 20;
+        res2.old ??= 20;
+
+        res1.month &&= 0;
+        res2.month &&= 0;
+
+        console.log(res1);
+        console.log(res2);
+    </script>
+</body>
+</html>
