@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const openinghours = {
+            thu: {
+                open: 12,
+                close: 22,
+            },
+            fri: {
+                open: 11,
+                close: 23,
+            },
+            sat: {
+                open: 0,
+                close: 24,
+            },
+        };
+        const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, quán, nhà',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['cơm', 'cháo', 'lẩu'],
+            openinghours,
+
+        };
+        // key
+        const day1 = Object.keys(openinghours);
+        let open = ` có ${day1.length} ngày mở cửa trong tuần là :`
+
+        for( const day of day1){
+            open += `${day},`;
+        }
+        console.log(open);
+        // values
+        const values = Object.values(openinghours);
+        console.log(values);
+        // entire
+        const entries = Object.entries(openinghours);
+        console.log(entries);
+        // key,values
+       for(const [day, {open,close}] of entries){
+        console.log(`on ${day} open ${open} close ${close}`)
+       }
+
+        
+    </script>
+</body>
+
+</html>
