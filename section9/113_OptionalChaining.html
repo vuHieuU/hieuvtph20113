@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const week = ['mon','tue','wed','thu','fri','sat','sun']
+        const openinghours = {
+            [week[3]]: {
+                open: 12,
+                close: 22,
+            },
+            [week[4]]: {
+                open: 11,
+                close: 23,
+            },
+            [week[5]]: {
+                open: 0,
+                close: 24,
+            },
+        };
+        const restaurant = {
+            name: 'Vũ Trung Hiếu',
+            location: 'Via Angelo Tavanti 23, quán, nhà',
+            categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+            starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+            mainMenu: ['cơm', 'cháo', 'lẩu'],
+            openinghours,
+
+        };
+        const days = ['mon','tue','wed','thu','fri','sat','sun'];
+          
+        for(const day of days){
+            const open = restaurant.openinghours[day]?.open ?? 'closed';
+            console.log(`thứ ${day} vào lúc ${open}`);
+        }
+        console.log(restaurant.starterMenu?.[0] ?? 'hết hàng')
+        console.log(restaurant.starterMenu?.[3] ?? 'không có')
+
+         const user = [{name:'hieu',email:'vuhieu13102003@gmail.com'}]
+        console.log(user[0]?.name ?? 'no')
+        console.log(user[1]?.name ?? 'no')
+    </script>
+</body>
+</html>
