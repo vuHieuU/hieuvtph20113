@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const menu = new Set(['cơm','cháo','mỳ','phở','cháo','cơm']);
+        console.log(menu)
+        console.log(menu.size)
+        //set chữ cái
+        console.log(new Set('hieu'))
+        // có hoặc không
+        console.log(menu.has('cơm'))
+        console.log(menu.has('break'))
+        // add thêm 
+        console.log(menu.add('break'))
+        // xóa
+        // menu.delete('cơm')
+        // console.log(menu)
+          // vòng lặp từng món
+              for(const menuNew of menu){
+                console.log(menuNew)
+              }
+        // đếm số mảng lặp
+         console.log(new Set(['cơm','cháo','mỳ','phở','cháo','cơm']).size);
+         console.log(new Set('hieeus').size);
+    </script>
+</body>
+</html>
