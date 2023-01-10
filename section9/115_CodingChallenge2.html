@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           const game = {
+            team1: 'Bayern Munich',
+            team2: 'Borrussia Dortmund',
+            players: [
+                [
+                    'Neuer',
+                    'Pavard',
+                    'Martinez',
+                    'Alaba',
+                    'Davies',
+                    'Kimmich',
+                    'Goretzka',
+                    'Coman',
+                    'Muller',
+                    'Gnarby',
+                    'Lewandowski',
+                ],
+                [
+                    'Burki',
+                    'Schulz',
+                    'Hummels',
+                    'Akanji',
+                    'Hakimi',
+                    'Weigl',
+                    'Witsel',
+                    'Hazard',
+                    'Brandt',
+                    'Sancho',
+                    'Gotze',
+                ],
+            ],
+            score: '4:0',
+            scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+            date: 'Nov 9th, 2037',
+            odds: {
+                team1: 1.33,
+                x: 3.25,
+                team2: 6.5,
+            },
+        };
+        // question 1
+             for (const goal of game.scored.entries()){
+                // console.log(goal);
+                console.log(`goal ${goal[0] + 1} : ${goal[1]}`);
+             }
+        // question 2
+               const odd2 = Object.values(game.odds);
+               let sum = 0;
+               for(const odd of odd2) 
+               sum += odd;
+               sum /= odd2.length;
+               console.log(sum)
+        // question 3
+            for(const [team,odd] of Object.entries(game.odds)){
+                const teamstr = team === 'x' ? 'draw' : `thắng ${game[team]}`;
+                console.log(`tỉ lệ ${teamstr} : ${odd}`);
+            }
+        
+          
+    </script>
+</body>
+</html>
