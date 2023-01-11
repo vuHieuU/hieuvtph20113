@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const openinghours = {
+        thu: {
+            open: 12,
+            close: 22,
+        },
+        fri: {
+            open: 11,
+            close: 23,
+        },
+        sat: {
+            open: 0,
+            close: 24,
+        },
+    };
+    const restaurant = {
+        name: 'Vũ Trung Hiếu',
+        location: 'Via Angelo Tavanti 23, quán, nhà',
+        categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+        starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+        mainMenu: ['cơm', 'cháo', 'lẩu'],
+        openinghours,
+    
+    };
+      const rest = new Map();
+      rest.set('name', 'hieu');
+      rest.set(1, 'vu');
+      console.log( rest.set(2, 'trung'))
+    
+    
+     rest.set('categories', ['Italian', 'pizzeria', 'vetetarian', 'orannic'])
+     .set('open', 11)
+     .set('closer', 23)
+     .set(true, 'we are open')
+     .set(false, 'we are closer')
+     console.log(rest.get('name'))
+     console.log(rest.get(true))
+     console.log(rest.get(1))
+    
+     const time = 8;
+     console.log(rest.get(time > rest.get('open') && time < rest.get('closer')));
+
+    //  rest.clear();
+     console.log(rest.size)
+     console.log(rest.has('categories'));
+     // xóa phần tử
+    //  rest.delete(2)
+     console.log(rest)
+    </script>
+</body>
+</html>
