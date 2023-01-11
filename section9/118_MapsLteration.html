@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const openinghours = {
+        thu: {
+            open: 12,
+            close: 22,
+        },
+        fri: {
+            open: 11,
+            close: 23,
+        },
+        sat: {
+            open: 0,
+            close: 24,
+        },
+    };
+    const restaurant = {
+        name: 'Vũ Trung Hiếu',
+        location: 'Via Angelo Tavanti 23, quán, nhà',
+        categories: ['Italian', 'pizzeria', 'vetetarian', 'orannic'],
+        starterMenu: ['phở', 'Bánh mỳ', 'bún chả'],
+        mainMenu: ['cơm', 'cháo', 'lẩu'],
+        openinghours,
+    
+    };
+        const question = new Map([['question','tao tên là gì'],
+        [1,'hiếu'],
+        [2,'vũ'],
+        [3,'trung'],
+        ['correct', 1],
+        [true ,'đúng rồi'],
+        [false ,'sai rồi'],
+]);
+    console.log(question)
+    const hour = Object.values(openinghours)
+    console.log(hour)
+    const hours = new Map(Object.entries(openinghours))
+    console.log(hours)
+
+    console.log(question.get('question'))
+    for (const [key, values] of question){
+        if(typeof key === 'number')  console.log(`đáp án ${key} : ${values}`)
+    }
+    //    const answer = Number(prompt('đáp án là gì'))
+    const answer = 1;
+    //    console.log(answer)
+         // cách 1
+      console.log(question.get(question.get('correct') == answer))
+         // cách 2
+    //    if(answer == 1){
+    //     console.log(question.get(true))
+    //    }else{
+    //     console.log(question.get(false))
+    //    }
+    
+    // console.log(...question)
+    // console.log(...question.entries())
+    // console.log(...question.keys())
+    // console.log(...question.values())
+    </script>
+</body>
+</html>
