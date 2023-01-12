@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const airline = 'TAP AIR VIETNAMR'
+
+         const plane = 'B52'
+
+         // lấy chữ cái theo số
+         console.log(airline[2])
+         console.log(plane[1])
+         console.log('B521'[3])
+         // độ dài
+         console.log(airline.length)
+         console.log(plane.length)
+         //lấy chữ đầu 
+         console.log(airline.indexOf('T'))
+         // lấy chữ cuối
+         console.log(airline.lastIndexOf('T'))
+         // lấy từ số chọn
+         console.log(airline.slice(4 ))
+
+         const AirlineSeat = function(seat){
+            const middleSeat = seat[0]
+            // console.log(middleSeat)
+             if(middleSeat === 'B' || middleSeat === 'D'){
+                console.log('bad')
+             }else{
+                console.log('good')
+             }
+         }
+
+         AirlineSeat('B1')
+         AirlineSeat('C2')
+         AirlineSeat('D1')
+    </script>
+
+</body>
+</html>
