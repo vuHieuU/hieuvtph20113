@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+        // xóa bỏ vào khoảng trắng giữa các chữ
+         console.log('tao+la+hieu'.split('+'))
+         console.log('trung hieu'.split(' '))
+         const [firstName, lastName] = 'trung hieu'.split(' ')
+         // thêm vào khoảng trắng giữa các chữ
+         const newName = ['vu', firstName,lastName.toUpperCase()].join(' ')
+         console.log(newName)
+
+         const nameUppercase = function(name){
+             const names = name.split(' ')
+             const upper = []
+             for (const n of names) {
+             upper.push(n[0].toUpperCase() + n.slice(1))
+             }
+             console.log(upper.join(' '))
+         }
+         nameUppercase('vu trung hieu')
+
+        //  padding
+        const padName = 'vu trung hieu'
+         console.log(padName.padStart('20' , '-').padEnd('25','-'))
+         console.log('vu hieu'.padStart('20' , '-').padEnd('25','-'))
+
+         const phone = function(number){
+            const SDT = number + ''
+            const str = SDT.slice(-4)
+            return str.padStart(SDT.length , '*')
+
+         }
+         console.log(phone(0386684014));
+         console.log(phone(0382988271));
+
+         const repead = 'vu hieu '
+         console.log(repead.repeat(2))
          
+         const repeat = function(n){
+              console.log(`tên mình lặp lại nè ${'hiếu '.repeat(n)}tổng ${n} lần`)
+         }
+         repeat(5)
+         repeat(4)
     </script>
 </body>
+
 </html>
