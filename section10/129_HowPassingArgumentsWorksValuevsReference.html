@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+           const flight = "PH20113"
+           const names = {
+            name : 'hieu',
+            old : 19,
+           }
+
+           const checkin = function(flightcheckin,namecheckin){
+            flightcheckin = '20113'
+                 namecheckin.name = 'mr.' + namecheckin.name
+                 namecheckin.old = 21
+                 if (namecheckin.old === 20) {
+                     alert('good')
+                 } else {
+                    alert('bad')
+                 }
+           }
+
+           checkin(flight,names)
+           console.log(flight)
+           console.log(names)
+    </script>
+    
+</body>
+</html>
