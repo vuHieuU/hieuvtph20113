@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          const oneWorld = function(str) {
+            return str.relace(/ /g, '').str.toLowerCase()
+          }
+          const firsts = function(str){
+            const [first, ...other] = str.split(' ');
+            return [first.toUpperCase(), ...other].join(' ');
+          }
+
+          const checkin = function(str ,fn){
+                  console.log(`name is the best: ${str}`)
+                  console.log(`name is the best: ${fn(str)}`)
+                  console.log(`name is the best: ${fn.name}`)
+          }
+
+          checkin('vu trung hieu',firsts)
+            
+          const hight5 = function(){
+            console.log('hieu');
+          }
+          document.body.addEventListener('click',hight5);
+          ['hieus','trung','vu','vu trung hieu'].forEach(hight5)
+    </script>
+</body>
+</html>
