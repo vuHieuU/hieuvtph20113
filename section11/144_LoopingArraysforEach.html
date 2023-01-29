@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = [200,400,-600,-800,1000,3000,-4000];
+         // cách 1
+        for (const [i,x] of n.entries()) {
+            if( x > 0){
+                console.log(`so lon hon ${i+1} :${x}`);
+            }else{
+                // math.abs lấy số dương
+                console.log(`so nho hon ${i+1} :${Math.abs(x)}`);
+            }
+        }
+         // cách 2
+        n.forEach(function(x,i) {
+            if(x > 0){
+                console.log(`so lon hon ${i+1} :${x}`);
+            }else{
+                // math.abs lấy số dương
+                console.log(`so nho hon ${i+1} :${Math.abs(x)}`);
+            }
+        })
+    </script>
+</body>
+</html>
