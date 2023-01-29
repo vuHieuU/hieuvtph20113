@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          const name = new Map([['vu','hieu'],['vn','vnd']])
+
+          name.forEach(function(values,keys,Map){
+              console.log(`${keys} : ${values}`)
+          })
+
+          const names = new Set(['hieu','hieu','vu','vu']);
+          names.forEach(function(values){
+              console.log(`${values} : ${values}`)
+         
+          })
+          console.log(names)
+    </script>
+</body>
+</html>
