@@ -83,22 +83,37 @@ const displayMovements = function(movements){
 };
 displayMovements(account1.movements)
 
-const users = function(accs){
-   accs.forEach(function(acc){
-    acc.username = acc.owner
-    .toLowerCase()
-    .split(' ')
-    .map(firstName => firstName[0])
-    .join('');
-   })
+const labelBalanceMovements = function(movements){
+  const balance = movements.reduce((cur,mov) => cur + mov, 0)
+    labelBalance.textContent = `${balance} EUR`
 }
-users(accounts)
-console.log(accounts)
+labelBalanceMovements(account1.movements)
 
-const movement = account1.movements.filter(mov => mov > 0)
-console.log(movement)
+// const users = function(accs){
+//    accs.forEach(function(acc){
+//     acc.username = acc.owner
+//     .toLowerCase()
+//     .split(' ')
+//     .map(firstName => firstName[0])
+//     .join('');
+//    })
+// }
+// users(accounts)
+// console.log(accounts)
+
+// const movement = account1.movements.filter(mov => mov > 0)
+// console.log(movement)
 
 // const movemen =movement.filter(function(mov){
 //   return mov > 0
 // })
 // console.log(movemen)
+
+// const acc1 = account1.movements
+
+// let movSum = 0;
+// for (const mov of acc1) movSum += mov;
+//      console.log(movSum)
+
+// const movSum2 = acc1.reduce((acc,cur) => acc+cur, 0)
+// console.log(movSum2)
