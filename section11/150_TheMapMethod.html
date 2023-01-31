@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           const n = [200,400,-600,-800,1000,3000,-4000];
+           const eurToUsd = 1.1;
+           
+        //    const UsdTO = n.map(function(n){
+        //     return n * eurToUsd;
+        //    })
+           const UsdTO = n.map(n => n * eurToUsd)
+           console.log(...n);
+
+           for (const usd of n) {
+            const eurToUsd = 1.1;
+              const usdtoeur = n * eurToUsd
+              console.log(usdtoeur)
+           }
+           console.log(UsdTO);
+            const x = n.map((mov,i) => 
+            `${i+1}:${mov > 0 ? 'lon hon 0' : 'nho hon 0'} ${Math.abs(mov)}`
+            )
+           console.log(x)
+    </script>
+</body>
+</html>
