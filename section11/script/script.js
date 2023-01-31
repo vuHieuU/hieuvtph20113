@@ -83,16 +83,22 @@ const displayMovements = function(movements){
 };
 displayMovements(account1.movements)
 
-
-const createName = function(accs){
-  accs.forEach(function(acc){
+const users = function(accs){
+   accs.forEach(function(acc){
     acc.username = acc.owner
     .toLowerCase()
     .split(' ')
-    .map(firstName=> firstName[0])
+    .map(firstName => firstName[0])
     .join('');
-  });
-};
-createName(accounts)
+   })
+}
+users(accounts)
 console.log(accounts)
- 
+
+const movement = account1.movements.filter(mov => mov > 0)
+console.log(movement)
+
+// const movemen =movement.filter(function(mov){
+//   return mov > 0
+// })
+// console.log(movemen)
