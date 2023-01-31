@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('-----data1-----')
+          const checkDogs = function(dogsJulia,dogsKate){
+              const dogcorrect = dogsJulia.slice();
+              dogcorrect.splice(0 ,1)
+              dogcorrect.splice(-2)
+            console.log(dogcorrect)
+            const allDog = dogcorrect.concat(dogsKate)
+            console.log(allDog)
+            allDog.forEach(function(old,arr){
+                const oldDog = old > 3 ? 'người lớn' : 'chó con'
+                // console.log(`cón chó số ${arr + 1} là ${oldDog} và ${old} tuổi`)
+                // console.log(`cón chó số ${arr + 1} vẫn là ${oldDog}`)
+                if(old > 3){
+                    console.log(`cón chó số ${arr + 1} là ${oldDog} và ${old} tuổi`)
+                }else{
+                    console.log(`cón chó số ${arr + 1} vẫn là ${oldDog}😬`)
+                }
+            })
+          }
+          checkDogs([3, 5, 2, 12, 7],[4, 1, 15, 8, 3])
+          console.log('-----data2-----')
+          const checkDogs2 = function(dogsJulia2,dogsKate2){
+               const dogcorrect2 = dogsJulia2.slice()
+               dogcorrect2.splice(0 ,1);
+               dogcorrect2.splice(-2);
+               console.log(dogcorrect2)
+               const allDog2 = dogcorrect2.concat(dogsKate2)
+               console.log(allDog2)
+            allDog2.forEach(function(old2,arr2){
+                const oldDog2 = old2 > 3 ? 'người lớn' : 'chó con'
+                 if(old2 > 3){
+                    console.log(`cón chó số ${arr2 + 1} là ${oldDog2} và ${old2} tuổi`)
+                 }else{
+                    console.log(`cón chó số ${arr2 + 1} vẫn là ${oldDog2}😬`)
+                 }
+            })
+          }
+          checkDogs2([9, 16, 6, 8, 3],[10, 5, 6, 1, 4])
+    </script>
+</body>
+</html>
