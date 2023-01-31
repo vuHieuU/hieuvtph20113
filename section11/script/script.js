@@ -82,3 +82,17 @@ const displayMovements = function(movements){
   });
 };
 displayMovements(account1.movements)
+
+
+const createName = function(accs){
+  accs.forEach(function(acc){
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(firstName=> firstName[0])
+    .join('');
+  });
+};
+createName(accounts)
+console.log(accounts)
+ 
