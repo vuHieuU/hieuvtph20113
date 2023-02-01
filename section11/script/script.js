@@ -83,11 +83,13 @@ const displayMovements = function(movements){
 };
 displayMovements(account1.movements)
 
-const labelBalanceMovements = function(movements){
-  const balance = movements.reduce((cur,mov) => cur + mov, 0)
-    labelBalance.textContent = `${balance} EUR`
+const balanceMovements = function(movements){
+  const balance = account1.movements.reduce((cur,mov) => cur + mov, 0);
+     labelBalance.innerHTML = `${balance} EUR`
 }
-labelBalanceMovements(account1.movements)
+
+balanceMovements(account1.movements)
+
 
 // const users = function(accs){
 //    accs.forEach(function(acc){
