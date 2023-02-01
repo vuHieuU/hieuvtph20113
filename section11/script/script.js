@@ -143,3 +143,5 @@ inComeMovements(account1.movements)
 // const movSum2 = acc1.reduce((acc,cur) => acc+cur, 0)
 // console.log(movSum2)
 
+const account = accounts.find(acc => acc.owner === 'Steven Thomas Williams')
+console.log(account)
