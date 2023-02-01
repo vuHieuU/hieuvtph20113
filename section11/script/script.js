@@ -87,8 +87,31 @@ const balanceMovements = function(movements){
   const balance = account1.movements.reduce((cur,mov) => cur + mov, 0);
      labelBalance.innerHTML = `${balance} EUR`
 }
-
 balanceMovements(account1.movements)
+
+const inComeMovements = function(movements){
+const incomes = account1.movements
+.filter(mov => mov > 0)
+.reduce((cur,mov) => cur + mov, 0)
+labelSumIn.innerHTML = `${incomes}€`
+}
+inComeMovements(account1.movements)
+
+const outComeMovements = function(movements){
+    const out = account1.movements
+    .filter(mov => mov < 0)
+    .reduce((cur , mov) => cur + mov , 0)
+    labelSumOut.innerHTML = `${Math.abs(out)}€`
+}
+outComeMovements(account1.movements)
+
+  const interest = account1.movements
+  .filter(mov => mov > 0)
+  .map(deposit => (deposit * 1.2) / 100)
+  .reduce((cur,mov) => cur + mov ,0)
+
+  labelSumInterest.innerHTML = `${interest}€`
+inComeMovements(account1.movements)
 
 
 // const users = function(accs){
@@ -119,3 +142,4 @@ balanceMovements(account1.movements)
 
 // const movSum2 = acc1.reduce((acc,cur) => acc+cur, 0)
 // console.log(movSum2)
+
