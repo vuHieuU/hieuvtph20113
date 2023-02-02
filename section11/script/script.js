@@ -66,6 +66,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
+// lấy tên viết tắt
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -88,7 +89,7 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
-
+// chuyển động của tiền
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -110,6 +111,7 @@ const displayMovements = function (movements, sort = false) {
   });
 };
 
+// tiền trong tài khoản
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${acc.balance}€`;
@@ -137,8 +139,8 @@ const calcDisplaySummary = function (acc) {
   labelSumInterest.textContent = `${interest}€`;
 };
 
+// đăng nhập
 let currentAccount;
-
 btnLogin.addEventListener('click' , function(e){
    e.preventDefault();
   currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
@@ -153,6 +155,7 @@ btnLogin.addEventListener('click' , function(e){
 
 });
 
+// chuyển tiền
 btnTransfer.addEventListener('click', function(e){
   e.preventDefault();
   const amount = Number(inputTransferAmount.value)
@@ -167,6 +170,27 @@ btnTransfer.addEventListener('click', function(e){
              currentAccount.movements.push(-amount)
              transferTo.movements.push(amount)
             updateUI(currentAccount)
+  }
+})
+
+// xóa tài khoản
+
+btnClose.addEventListener('click', function(e){
+  e.preventDefault();
+
+
+
+  if(inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount?.pin){
+    // lấy id
+      const index = accounts.findIndex(acc => acc.username === currentAccount.username)
+      console.log(index)
+    
+    // xóa
+    accounts.splice(index, 1);
+
+    // xóa xong về 0
+    containerApp.style.opacity= 0;
+
   }
 })
 
