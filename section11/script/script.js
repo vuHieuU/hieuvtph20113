@@ -268,3 +268,10 @@ btnSort.addEventListener('click', function(e){
 // cách 2
 // const mov2 = account1.movements.sort((a,b) => b-a)
 // console.log(mov2)
+
+labelBalance.addEventListener('click', function(){
+    const x = Array.from(document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+    );
+    console.log(x)
+})
