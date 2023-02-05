@@ -208,6 +208,17 @@ btnClose.addEventListener('click', function(e){
   }
 })
 
+// xắp xếp
+let sorted;
+btnSort.addEventListener('click', function(e){
+  e.preventDefault()
+
+  displayMovements(currentAccount.movements, !sorted)
+  sorted = !sorted
+
+})
+
+
 
 
 
@@ -233,3 +244,27 @@ btnClose.addEventListener('click', function(e){
 
 // const account = accounts.find(acc => acc.owner === 'Steven Thomas Williams')
 // console.log(account)
+
+
+// sắp sếp
+// cách 1
+// const mov = account1.movements.sort((a, b) => {
+//   if(a < b)
+//      return -1;
+//   if(a > b)
+//     return 1;
+// })
+// cách 2
+// const mov = account1.movements.sort((a,b) => a-b)
+// console.log(mov)
+
+// cách 1
+// const mov2 = account1.movements.sort((a, b) => {
+//   if(a < b)
+//      return 1;
+//   if(a > b)
+//     return -1;
+// })
+// cách 2
+// const mov2 = account1.movements.sort((a,b) => b-a)
+// console.log(mov2)
