@@ -142,3 +142,13 @@ btnScrollTo.addEventListener('click', function(e){
 //     logo.classList.contains('c'); // not includes
 //     // Don't use
 //     logo.clasName = 'jonas';
+
+// các sự kiện
+
+const h1 = document.querySelector('h1');
+
+const h1Alert = function(e){
+    alert('addEventListener');
+};
+    h1.addEventListener('mouseenter', h1Alert)
+   setTimeout(() => h1.removeEventListener('mouseenter' , h1Alert),3000)
