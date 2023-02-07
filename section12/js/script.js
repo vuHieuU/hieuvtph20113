@@ -39,7 +39,7 @@ document.addEventListener('keydown', function (e) {
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 
-btnScrollTo.addEventListener('click', function(e){
+btnScrollTo.addEventListener('click', function (e) {
     const s1coords = section1.getBoundingClientRect();
     // console.log(s1coords);
     // console.log(e.target.getBoundingClientRect());
@@ -57,7 +57,17 @@ btnScrollTo.addEventListener('click', function(e){
     //     behavior : 'smooth'
     // })
     // cách 2
-    section1.scrollIntoView({behavior:'smooth'});
+    section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+// cuộn mượt nav--link
+
+document.querySelector('.nav__links').addEventListener('click', function(e){
+    e.preventDefault();
+    if(e.target.classList.contains('nav__link')){
+     const id = e.target.getAttribute('href');
+     document.querySelector(id).scrollIntoView({behavior:'smooth'})
+    }
 });
 
 
@@ -130,7 +140,7 @@ btnScrollTo.addEventListener('click', function(e){
 //     console.log(logo.src);
 //     // lấy tên logo
 //     console.log(logo.getAttribute('src'));
-    
+
 //     const link = document.querySelector('.nav__link--btn');
 //     console.log(link.href);
 //     console.log(link.getAttribute('href'));
@@ -145,10 +155,32 @@ btnScrollTo.addEventListener('click', function(e){
 
 // các sự kiện
 
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-const h1Alert = function(e){
-    alert('addEventListener');
-};
-    h1.addEventListener('mouseenter', h1Alert)
-   setTimeout(() => h1.removeEventListener('mouseenter' , h1Alert),3000)
+// const h1Alert = function(e){
+//     alert('addEventListener');
+// };
+//     h1.addEventListener('mouseenter', h1Alert)
+//    setTimeout(() => h1.removeEventListener('mouseenter' , h1Alert),3000)
+
+// sự kiện trong thưc tế
+
+// // random số
+// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+// // random màu
+// const rgbColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
+
+// // console.log(rgbColor(0, 255))
+
+// document.querySelector('.nav__link').addEventListener('click', function(e){
+//     e.preventDefault();
+//      this.style.backgroundColor = rgbColor();
+// })
+// document.querySelector('.nav__links').addEventListener('click', function(e){
+//     e.preventDefault();
+//      this.style.backgroundColor = rgbColor();
+// })
+// document.querySelector('.nav').addEventListener('click', function(e){
+//     e.preventDefault();
+//      this.style.backgroundColor = rgbColor();
+// })
