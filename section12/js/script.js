@@ -5,9 +5,7 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const nav = document.querySelector('.nav');
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
+
 
 ///////////////////////////////////////
 // Modal window
@@ -69,6 +67,25 @@ document.querySelector('.nav__links').addEventListener('click', function(e){
      document.querySelector(id).scrollIntoView({behavior:'smooth'})
     }
 });
+
+//thành phần theo thẻ
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', (e)=>{
+    e.preventDefault();
+     const clicker = e.target.closest('.operations__tab')
+     if(!clicker) return;
+
+    //  remove
+    tabs.forEach(t =>t.classList.remove('operations__tab--active'))
+    tabsContent.forEach(c =>c.classList.remove('operations__content--active'))
+     // click tab
+     clicker.classList.add('operations__tab--active')
+
+     document.querySelector(`.operations__content--${clicker.dataset.tab}`).classList.add('operations__content--active')
+})
 
 ///////////////////////////////////
 ////////////////////////////////////////////////
@@ -183,29 +200,29 @@ document.querySelector('.nav__links').addEventListener('click', function(e){
 //      this.style.backgroundColor = rgbColor();
 // })
 
- const h1 = document.querySelector('h1');
+//  const h1 = document.querySelector('h1');
 
- console.log(h1.querySelectorAll('.highlight'));
- console.log(h1.childNodes);
- console.log(h1.children);
- h1.firstElementChild.style.color = 'blue';
- h1.lastElementChild.style.color = 'orangered';
+//  console.log(h1.querySelectorAll('.highlight'));
+//  console.log(h1.childNodes);
+//  console.log(h1.children);
+//  h1.firstElementChild.style.color = 'blue';
+//  h1.lastElementChild.style.color = 'orangered';
 
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
-h1.closest('header').style.backgroundColor = "yellow"
-h1.closest('h1').style.backgroundColor = "violet"
+// h1.closest('header').style.backgroundColor = "yellow"
+// h1.closest('h1').style.backgroundColor = "violet"
 
-// thẻ trước sau h1
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
-//kiểu thẻ trước sau h1
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// // thẻ trước sau h1
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+// //kiểu thẻ trước sau h1
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1.parentElement.children);
+// console.log(h1.parentElement.children);
 
-[...h1.parentElement.children].forEach(function(el) {
-     if(el !== h1) el.style.transform = 'scale(0.5)';
-})
+// [...h1.parentElement.children].forEach(function(el) {
+//      if(el !== h1) el.style.transform = 'scale(0.5)';
+// })
